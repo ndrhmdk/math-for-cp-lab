@@ -14,7 +14,7 @@ def bellmanFord(V, edges, src):
 
 
 if __name__ == '__main__':
-    V = 5
+    V = 10
     edges = [[1, 3, 2],
              [4, 3, -1],
              [2, 4, 1],
