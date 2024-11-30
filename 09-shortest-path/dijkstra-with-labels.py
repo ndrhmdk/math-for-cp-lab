@@ -1,4 +1,5 @@
 import sys
+import os
 
 class Graph:
     def __init__(self, vertices, vertex_labels):
@@ -8,6 +9,7 @@ class Graph:
         self.vertex_labels = vertex_labels
 
     def printSolution(self, dist, predecessors, src):
+        # Nested function to print the path from source to a given vertex
         def printPath(j):
             path = []
             while j != -1:
@@ -25,12 +27,11 @@ class Graph:
                 print(f"Path to {self.vertex_labels[i]}: {printPath(i)}")
 
     def minDistance(self, dist, sptSet):
-        # Initialize minimum distance for next node
+        # Initialize minimum distance for the next node
         min = sys.maxsize
-        
         min_index = -1
 
-        # Search not nearest vertex not in the shortest path tree
+        # Search for the nearest vertex not in the shortest path tree
         for u in range(self.V):
             if dist[u] < min and sptSet[u] == False:
                 min = dist[u]
@@ -39,15 +40,14 @@ class Graph:
         return min_index
 
     def dijkstra(self, src):
-        # Initialize distances from src to all vertices as infinite and sptSet[] as false
+        # Initialize distances from src to all vertices as infinite
         dist = [sys.maxsize] * self.V
         dist[src] = 0  # Distance of source vertex from itself is always 0
         sptSet = [False] * self.V  # Shortest path tree set
-        predecessors = [-1] * self.V  # Array to store shortest path tree
+        predecessors = [-1] * self.V  # Array to store the shortest path tree
 
         for cout in range(self.V):
-            # Pick the minimum distance vertex from the set of vertices not yet processed.
-            # x is always equal to src in first iteration
+            # Pick the minimum distance vertex from the set of vertices not yet processed
             x = self.minDistance(dist, sptSet)
             
             # Put the minimum distance vertex in the shortest path tree
@@ -65,7 +65,7 @@ class Graph:
 if __name__ == "__main__":
     vertex_labels = ['a', 'b', 'c', 'd', 'e', 'g', 'h', 'k', 'm', 'n']
     g = Graph(10, vertex_labels)
-    # Adjacent Matrix
+    # Adjacency Matrix
     g.graph = [[0, 1, 0, 0, 3, 0, 0, 0, 3, 2],
                [1, 0, 4, 0, 1, 0, 0, 0, 0, 0],
                [0, 4, 0, 6, 2, 2, 0, 0, 0, 0],
@@ -77,5 +77,12 @@ if __name__ == "__main__":
                [3, 0, 0, 0, 5, 5, 0, 3, 0, 6],
                [2, 0, 0, 0, 3, 0, 0, 0, 6, 0]]
 
+    for i in range(g.V): 
+        for j in range(g.V): 
+            if g.graph[i][j] < 0: 
+                print(f"Edge weight at ({i},{j}) is negative: {g.graph[i][j]}") 
+                sys.exit("Negative edge weight found, stopping execution.")
+
     # 'A' to every thing else
+    os.system('cls')
     g.dijkstra(0)
