@@ -17,7 +17,7 @@ class Graph():
 
         print("Vertex\t Distance from Source")
         for i in range(self.V):
-            print(f"{self.vertex_labels[i]}\t\t {dist[i]}")
+            print(f"{self.vertex_labels[i]}\t {dist[i]}")
 
         print("\nPaths from source:")
         for i in range(self.V):
