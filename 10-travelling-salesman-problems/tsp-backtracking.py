@@ -1,3 +1,5 @@
+inf = 999
+
 def totalCost(cost, visited, currPos, n, count, costSoFar, ans, path, bestPath):
     """
     Calculate the minimum cost to visit all cities starting and ending at the starting point using Backtracking.
@@ -44,10 +46,12 @@ def tsp(cost):
 
 if __name__ == '__main__':
     cost = [
-        [0, 85, 26, 81],
-        [85, 0, 77, 97],
-        [26, 77, 0, 26],
-        [81, 97, 26, 0]
+        [inf, 31, 15, 23, 10, 171],
+        [16, inf, 24, 7, 12, 12],
+        [34, 3, inf, 25, 54, 25],
+        [15, 20, 33, inf, 50, 40],
+        [16, 10, 32, 3, inf, 23],
+        [18, 20, 13, 28, 21, inf]
     ]
     res, path = tsp(cost)
     print("Minimum cost: ", res)

@@ -1,5 +1,7 @@
 import sys
 
+inf = 999
+
 def total_cost(mask, pos, n, cost, memo, parent):
     # Base case: if all cities are visited, return the cost to return to the starting city
     if mask == (1 << n) - 1:
@@ -45,10 +47,12 @@ def tsp(cost):
 
 if __name__ == "__main__":
     cost = [
-        [0, 85, 26, 81],
-        [85, 0, 77, 97],
-        [26, 77, 0, 26],
-        [81, 97, 26, 0]
+        [inf, 31, 15, 23, 10, 171],
+        [16, inf, 24, 7, 12, 12],
+        [34, 3, inf, 25, 54, 25],
+        [15, 20, 33, inf, 50, 40],
+        [16, 10, 32, 3, inf, 23],
+        [18, 20, 13, 28, 21, inf]
     ]
 
     result, path = tsp(cost)
