@@ -3,7 +3,7 @@ def init(b, n):
         b.append(0)
 
 def out(b, n):
-    print("".join(map(str, b[:n])))
+    print(" ".join(map(str, b[:n])))
 
 def islast(b, n):
     return all(x == 1 for x in b[:n])

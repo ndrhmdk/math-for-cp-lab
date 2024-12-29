@@ -17,7 +17,7 @@ def Try(i, s, n):
             Try(i + 1, s, n)
 
 def main():
-    n = 8
+    n = 5
     s = [0] * (n + 1)
     Try(1, s, n)
 
