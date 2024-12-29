@@ -19,20 +19,20 @@ This repository is a comprehensive guide and code library for mathematical conce
 ## Backtracking & Generation
 ### Generation
 1. **Generate binary sequences**  
-   Given a positive integer `N`, generate all possible sequences \( b_1, b_2, \ldots, b_N \), where \( b_i \in \{0, 1\}, \left(1 \leq i \leq N\right) \).
+   Given a positive integer `N`, generate all possible sequences $b_1, b_2, \ldots, b_N$, where $b_i \in \{0, 1\}, \left(1 \leq i \leq N\right)$.
 
 2. **List subsets with `m` elements**  
-   Given a set \( X = \{1, 2, 3, \ldots, n\} \), list all subsets containing exactly `m` elements.
+   Given a set $X = \{1, 2, 3, \ldots, n\}$, list all subsets containing exactly `m` elements.
 
 3. **List unique permutations**  
-   Generate all unique permutations of \( n \) elements from set \( X = \{1, 2, 3, \ldots, n\} \).
+   Generate all unique permutations of $n$ elements from set $X = \{1, 2, 3, \ldots, n\}$.
 
 ### Backtracking
-1. **List permutations of 1 to `n`**  
-   Input a positive integer `n` and generate all permutations of the numbers \( 1, 2, 3, \ldots, n \).
+1. **List permutations of `1` to `n`**  
+   Input a positive integer `n` and generate all permutations of the numbers $1, 2, 3, \ldots, n$.
 
 2. **Generate unique permutations**  
-   List all unique permutations of a set containing \( n \) elements.
+   List all unique permutations of a set containing `n` elements.
 
 3. **N-Queens Problem**  
    Solve the N-Queens problem using backtracking.
